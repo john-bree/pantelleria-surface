@@ -1,0 +1,105 @@
+{
+  "$schema": "https://pi.dev/schemas/models.schema.json",
+  "providers": {
+    "qwencloud": {
+      "name": "QwenCloud Token Plan",
+      "baseUrl": "https://token-plan.maas.qwencloudapi.com/compatible-mode/v1",
+      "api": "openai-completions",
+      "apiKey": "$QWENCLOUD_API_KEY",
+      "compat": {
+        "supportsDeveloperRole": false
+      },
+      "models": [
+        {
+          "id": "qwen4-max-preview",
+          "name": "Qwen4 Max (Preview)",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 393216
+        },
+        {
+          "id": "qwen4-max",
+          "name": "Qwen4 Max",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 262144
+        },
+        {
+          "id": "qwen3.8-flash",
+          "name": "Qwen3.8 Flash",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 983040,
+          "maxTokens": 131072
+        }
+      ]
+    },
+    "zai": {
+      "models": [
+        {
+          "id": "glm-5.4",
+          "name": "GLM-5.4",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "thinkingLevelMap": {
+            "off": null,
+            "minimal": null,
+            "low": "low",
+            "medium": null,
+            "high": "high",
+            "xhigh": null,
+            "max": "max"
+          },
+          "compat": {
+            "supportsStore": false,
+            "supportsDeveloperRole": false,
+            "supportsReasoningEffort": true,
+            "maxTokensField": "max_tokens",
+            "thinkingFormat": "zai",
+            "supportsStrictMode": true,
+            "zaiToolStream": true
+          }
+        }
+      ]
+    }
+  }
+}
